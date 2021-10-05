@@ -1,19 +1,25 @@
-html {
-  min-height: 100%;
-  background-image: linear-gradient(#4158d0, #c850c0, #ffcc70);
+body {
+  height: 100%;
+  background-image: url('media_1f78a60f54d4768f60186918e91c3a695f221f849.webp');
 }
 
-/* body {
-  height: 100%;
-} */
-
 header {
-  /* height: 20vh; */
-  /* align-items: center; */
-  /* margin: auto; */
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-right: 40px;
+  color: white;
+}
+
+header h2 {
+  font-size: 2rem;
+}
+
+h1 {
   text-align: center;
-  margin-top: 80px;
-  margin-bottom: 30px;
   color: white;
 }
 
@@ -23,7 +29,7 @@ footer {
 }
 
 main {
-  height: 60%;
+  height: 400px;
   display: flex;
   justify-content: center;
 }
@@ -39,15 +45,16 @@ main p:last-of-type {
 .signUpDiv {
   text-align: center;
   width: 35%;
-  background-color: rgba(0, 0, 0, 0.384);
-  padding-top: 30px;
+  background-color: rgba(0, 0, 0, 0.753);
+  padding: 30px 20px;
+}
 
-  /* opacity: 0.4; */
+.signUpDiv .button {
+  margin-top: 25px;
 }
 
 .signUpDiv h2 {
   color: white;
-  /* opacity: 1; */
 }
 
 .email {
@@ -67,13 +74,17 @@ main p:last-of-type {
 
 .socialMediaLinks {
   height: 50px;
-  /* background-color: rgba(255, 255, 255, 0.637); */
 }
 
 .subscriptionDiv {
+  padding: 30px 20px;
   text-align: center;
   width: 35%;
   background-color: white;
+}
+
+.subscriptionDiv .fas {
+  color: rgb(238, 126, 223);
 }
 
 .SubscribeImg {
@@ -82,7 +93,7 @@ main p:last-of-type {
 }
 
 .subscriptionDiv p {
-  color: rgba(0, 0, 0, 0.548);
+  color: rgba(0, 0, 0, 0.671);
 }
 
 #lastLine {
@@ -97,10 +108,44 @@ main p:last-of-type {
 }
 
 .button {
-  margin-top: 20px;
+  margin-top: 35px;
   padding: 5px 15px 5px 15px;
   background-color: rgb(238, 126, 223);
   border: none;
   color: white;
   border-radius: 12px;
+}
+
+.facebook {
+  color: rgb(24, 119, 242);
+  padding-right: 10px;
+}
+
+.twitter {
+  color: rgb(29 161 242);
+  padding-right: 10px;
+}
+
+.linkedin {
+  color: rgb(0, 119, 181);
+  padding-right: 10px;
+}
+
+.mail-icon {
+  color: white;
+  right: 25px;
+}
+
+.password-icon {
+  color: white;
+  right: 25px;
+}
+
+.inputFields i {
+  position: relative;
+}
+
+.mail-icon-subscription {
+  color: black;
+  right: 25px;
 }
