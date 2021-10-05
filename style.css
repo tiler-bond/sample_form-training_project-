@@ -23,7 +23,7 @@ footer {
 }
 
 main {
-  height: 60vh;
+  height: 60%;
   display: flex;
   justify-content: center;
 }
