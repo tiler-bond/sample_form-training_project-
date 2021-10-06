@@ -10,50 +10,118 @@
       src="https://kit.fontawesome.com/6bd5d186a1.js"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <header>
-      <i class="fas fa-6x fa-globe-europe"></i>
-      <h2>GatesNotes</h2>
-    </header>
-    <h1>Sign Up & Subscribe Form</h1>
-    <main>
-      <div class="signUpDiv">
-        <h2>SIGN UP WITH</h2>
-        <div class="socialMediaLinks">
-          <i class="fab fa-3x facebook fa-facebook-square"></i>
-          <i class="fab fa-3x twitter fa-twitter"></i>
-          <i class="fab fa-3x linkedin fa-linkedin"></i>
-        </div>
+    <!-- TASK 1 -->
 
-        <p>(or)</p>
-        <p class="registeredUser">Have an Account?</p>
-        <div class="inputFields">
-          <input type="email" class="email" placeholder="E-Mail" />
-          <i class="far mail-icon fa-envelope"></i>
-          <input type="password" class="password" placeholder="Password" />
-          <i class="fas password-icon fa-lock-open"></i>
+    <div class="task1-sample-form">
+      <header class="header">
+        <i class="fas fa-4x logo fa-globe-europe"></i>
+        <h2>GatesNotes</h2>
+      </header>
+      <h1>Sign Up & Subscribe Form</h1>
+      <main>
+        <div class="signUpDiv">
+          <h2>SIGN UP WITH</h2>
+          <div class="socialMediaLinks">
+            <i class="fab fa-2x facebook fa-facebook-square"></i>
+            <i class="fab fa-2x twitter fa-twitter"></i>
+            <i class="fab fa-2x linkedin fa-linkedin"></i>
+          </div>
+          <p>(or)</p>
+          <p class="registeredUser">Have an Account?</p>
+          <div class="inputFields">
+            <input type="email" class="email" placeholder="E-Mail" />
+            <i class="far mail-icon fa-envelope"></i>
+            <input type="password" class="password" placeholder="Password" />
+            <i class="fas password-icon fa-lock-open"></i>
+          </div>
+          <button type="button" class="button">Get Started</button>
         </div>
-        <button type="button" class="button">Get Started</button>
-      </div>
-      <div class="subscriptionDiv">
-        <i class="fas fa-3x fa-paper-plane"></i>
-        <h2>SUBSCRIBE</h2>
-        <p>Subscribe To Get Our Latest Update!</p>
-        <p id="lastLine">Drop A Mail To Join Our Newsletter For Free News</p>
-        <div class="inputFields">
-          <input type="email" id="email" placeholder="Enter Your Email" />
-          <i class="far mail-icon-subscription fa-envelope"></i>
+        <div class="subscriptionDiv">
+          <i class="fas fa-3x fa-paper-plane"></i>
+          <h2>SUBSCRIBE</h2>
+          <p>Subscribe To Get Our Latest Update!</p>
+          <p id="lastLine">Drop A Mail To Join Our Newsletter For Free News</p>
+          <div class="inputFields">
+            <input type="email" id="email" placeholder="Enter Your Email" />
+            <i class="far mail-icon-subscription fa-envelope"></i>
+          </div>
+          <input type="button" class="button" value="SUBSCRIBE" />
         </div>
-        <input type="button" class="button" value="SUBSCRIBE" />
-      </div>
-    </main>
+      </main>
+      <footer class="footer">
+        <p>
+          © 2017 Sign Up & Subscribe Form. All rights reserved | Design by
+          W3layouts
+        </p>
+      </footer>
+    </div>
 
-    <footer>
-      <p>
-        © 2017 Sign Up & Subscribe Form. All rights reserved | Design by
-        W3layouts
-      </p>
-    </footer>
+    <!--  TASK 2 -->
+
+    <div class="task2-operators-DOM">
+      <div class="calculator">
+        <div class="resultArea">
+          <div class="finalResult">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur</p> -->
+          </div>
+          <div class="initialValue">
+            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+          </div>
+        </div>
+        <div class="numPad">
+          <div class="grid-item">
+            <button class="number" id="7" onclick="alertt(7)">7</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="8" onclick="alertt(8)">8</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="9" onclick="alertt(9)">9</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="*" onclick="alertt('*')">*</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="4" onclick="alertt(4)">4</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="5" onclick="alertt(5)">5</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="6" onclick="alertt(6)">6</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="/" onclick="alertt('/')">/</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="1" onclick="alertt(1)">1</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="2" onclick="alertt(2)">2</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="3" onclick="alertt(3)">3</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="-" onclick="alertt('-')">-</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="AC" onclick="alertt('AC')">AC</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="0" onclick="alertt(0)">0</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="=" onclick="alertt('=')">=</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="+" onclick="alertt('+')">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
