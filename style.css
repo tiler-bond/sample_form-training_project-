@@ -223,3 +223,33 @@ main p:last-of-type {
   text-align: end;
   font-size: 4rem;
 }
+
+/* TASK 3 */
+
+.evenNumbers {
+  text-align: center;
+  margin: 100px 100px 30px 100px;
+}
+
+.container {
+  display: flex;
+  height: 526px;
+  background-color: lemonchiffon;
+  justify-content: center;
+  padding: 5px;
+}
+
+.listNumbers {
+  width: 25px;
+}
+
+.row {
+  width: 70px;
+  height: 526px;
+}
+.descriptionDiv {
+  background-color: lemonchiffon;
+  height: auto;
+  padding: 5px;
+  text-align: center;
+}
