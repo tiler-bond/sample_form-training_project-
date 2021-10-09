@@ -49,7 +49,7 @@ function notSubmittingForm(e) {
   }
   descriptionDiv.insertAdjacentHTML(
     'afterbegin',
-    `<p>ALL the Even Numbers upto ${number}</p>`
+    `<p>ALL Even Numbers upto ${number}</p>`
   );
   for (let i = 1; i <= number; i++) {
     if (i % 2 === 0) arr.push(i);
