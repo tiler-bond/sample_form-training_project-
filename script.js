@@ -34,13 +34,13 @@ const inputNumber = document.querySelector('#evenNum');
 const outerForm = document.querySelector('.evenNumbers');
 const container = document.querySelector('.container');
 const descriptionDiv = document.querySelector('.descriptionDiv');
-let html = '';
+// let html = '';
 outerForm.addEventListener('submit', notSubmittingForm);
 function notSubmittingForm(e) {
   e.preventDefault();
   container.innerHTML = '';
   descriptionDiv.innerHTML = '';
-  const arr = [];
+  //   const arr = [];
   const number = +inputNumber.value;
   if (number > 500) {
     inputNumber.value = '';
@@ -51,21 +51,35 @@ function notSubmittingForm(e) {
     'afterbegin',
     `<p>ALL Even Numbers upto ${number}</p>`
   );
-  for (let i = 1; i <= number; i++) {
-    if (i % 2 === 0) arr.push(i);
-    else continue;
-  }
+  //   for (let i = 1; i <= number; i++) {
+  //     if (i % 2 === 0) arr.push(i);
+  //     else continue;
+  //   }
+  //   let id = 0;
+  //   arr.forEach((r, i) => {
+  //     html = `<ul class="listNumbers" ><li>${r}</li></ul>`;
+  //     if (i % 15 === 0) {
+  //       id++;
+  //       const row = document.createElement('div');
+  //       row.setAttribute('class', 'row');
+  //       row.setAttribute('id', `row${id}`);
+  //       container.appendChild(row);
+  //     }
+  //     document.querySelector(`#row${id}`).insertAdjacentHTML('beforeend', html);
+  //     html = '';
+  //   });
   let id = 0;
-  arr.forEach((r, i) => {
-    html = `<ul class="listNumbers" ><li>${r}</li></ul>`;
-    if (i % 15 === 0) {
+  for (let i = 2; i <= number; i++) {
+    if ((i - 2) % 30 === 0) {
       id++;
       const row = document.createElement('div');
       row.setAttribute('class', 'row');
       row.setAttribute('id', `row${id}`);
       container.appendChild(row);
     }
-    document.querySelector(`#row${id}`).insertAdjacentHTML('beforeend', html);
-    html = '';
-  });
+    if (i % 2 === 0) {
+      const html = `<ul class="listNumbers" ><li>${i}</li></ul>`;
+      document.querySelector(`#row${id}`).insertAdjacentHTML('beforeend', html);
+    }
+  }
 }
