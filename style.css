@@ -233,6 +233,8 @@ main p:last-of-type {
 
 .container {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   height: 526px;
   background-color: lemonchiffon;
   justify-content: center;
@@ -240,16 +242,45 @@ main p:last-of-type {
 }
 
 .listNumbers {
+  height: 20px;
   width: 25px;
+  margin: auto;
 }
 
-.row {
+/* .row {
   width: 70px;
   height: 526px;
-}
+} */
 .descriptionDiv {
   background-color: lemonchiffon;
   height: auto;
   padding: 5px;
   text-align: center;
+}
+
+/* TASK 4 */
+
+.task-4 {
+  padding: 50px;
+}
+
+.task-4 h1 {
+  color: black;
+  padding-bottom: 30px;
+}
+
+#concat {
+  width: 250px;
+}
+
+#slice {
+  width: 300px;
+}
+
+#splice {
+  width: 450px;
+}
+span {
+  color: rgba(0, 0, 0, 0.692);
+  font-size: 1rem;
 }
