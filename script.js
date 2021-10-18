@@ -173,3 +173,81 @@ arrSplice.addEventListener('change', function () {
     arrSplice.value = '';
   }
 });
+
+//TASK 5
+
+const inputForm = document.querySelector('.inputForm');
+const inputTask = document.querySelector('.task-list');
+const inputValue = document.querySelector('#todo-input');
+let counter = 0;
+inputForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (inputValue.value === '') {
+    alert('no task added');
+    return;
+  }
+  counter++;
+  const html = `
+    <div class="list-container" >
+            <div class="task-div">
+              <p class="task-info">${inputValue.value}</p>
+              <div class="edit-delete-button">
+                  <button  class="edit-task" ><i class="far fa-2x edit fa-edit"></i></button>
+                  <button class="delete-task" ><i class="fas fa-2x delete fa-trash"></i></button>
+              </div>
+            </div>
+            <div class="edit-div hidden">
+                  <form action="" class="task-form">
+                      <input
+                        type="text"
+                        class="editValue"
+                        autocomplete="off"
+                        value="${inputValue.value}"
+                      />
+                  <button class="save-button"><i class="far fa-2x fa-save"></i></button>
+              </form>
+    </div>`;
+  inputTask.insertAdjacentHTML('beforeend', html);
+
+  inputValue.value = '';
+});
+
+inputTask.addEventListener('click', function (e) {
+  if (
+    e.target.getAttribute('class').includes('edit') ||
+    e.target.getAttribute('class').includes('edit-task')
+  ) {
+    const editTask = e.target;
+    const x = editTask.closest('.list-container');
+    const y = x.querySelector('.edit-div');
+    y.classList.remove('hidden');
+    const editValue = y.querySelector('.editValue');
+    const z = editValue.value;
+    editValue.focus();
+    editValue.value = '';
+    editValue.value = z;
+  } else if (e.target.getAttribute('class').includes('delete-task')) {
+    e.target.parentNode.parentNode.parentNode.remove();
+  } else if (e.target.getAttribute('class').includes('delete')) {
+    e.target.parentNode.parentNode.parentNode.parentNode.remove();
+  }
+});
+
+inputTask.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const editValue = e.target.querySelector('.editValue').value;
+
+  const z = e.target.closest('.list-container');
+  z.querySelector('.task-info').innerText = editValue;
+  const y = e.target.closest('.edit-div');
+  y.classList.add('hidden');
+  console.log(editValue);
+});
+
+document.addEventListener('click', function (e) {
+  console.log(e.target);
+
+  //   if (document.querySelector('.task-list').contains('div')) {
+  //     document.querySelectorAll('.edit-div').classList.add('hidden');
+  //   } else return;
+});
