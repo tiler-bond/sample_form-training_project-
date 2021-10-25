@@ -179,14 +179,14 @@ arrSplice.addEventListener('change', function () {
 const inputForm = document.querySelector('.inputForm');
 const inputTask = document.querySelector('.task-list');
 const inputValue = document.querySelector('#todo-input');
-let counter = 0;
+
 inputForm.addEventListener('submit', function (e) {
   e.preventDefault();
   if (inputValue.value === '') {
     alert('no task added');
     return;
   }
-  counter++;
+
   const html = `
     <div class="list-container" >
             <div class="task-div">
@@ -244,10 +244,207 @@ inputTask.addEventListener('submit', function (e) {
   console.log(editValue);
 });
 
-document.addEventListener('click', function (e) {
-  console.log(e.target);
+// document.addEventListener('click', function (e) {
+//   console.log(e.target);
 
-  //   if (document.querySelector('.task-list').contains('div')) {
-  //     document.querySelectorAll('.edit-div').classList.add('hidden');
-  //   } else return;
-});
+//     if (document.querySelector('.task-list').contains('div')) {
+//       document.querySelectorAll('.edit-div').classList.add('hidden');
+//     } else return;
+// });
+///////////////
+///////////////
+///////////////
+//   TASK-6
+//////////////
+//////////////
+//////////////
+
+//UserName validation
+const task6InputName = document.querySelector('#userName');
+function userNameChange() {
+  if (task6InputName.value === '') {
+    document.querySelector('.task6-alert-user-name').innerHTML =
+      'This field cannot be left empty';
+    document.querySelector('.task6-alert-user-name').classList.remove('hidden');
+  } else if (task6InputName.value !== '') {
+    document.querySelector('.task6-alert-user-name').classList.add('hidden');
+  }
+  finalCheck();
+}
+
+//Password validation
+let task6InputPassword = document.querySelector('#password');
+function passwordChange() {
+  let enteredPassword = task6InputPassword.value;
+  if (enteredPassword === '') {
+    document.querySelector('.task6-alert-user-password').innerHTML =
+      'This field cannot be left empty';
+    document
+      .querySelector('.task6-alert-user-password')
+      .classList.remove('hidden');
+  } else {
+    document
+      .querySelector('.task6-alert-user-password')
+      .classList.add('hidden');
+    let upperCase = 0;
+    let lowerCase = 0;
+    let number = 0;
+    for (let i = 0; i < enteredPassword.length; i++) {
+      if (
+        (enteredPassword.charCodeAt(i) >= 65) &
+        (enteredPassword.charCodeAt(i) <= 90)
+      ) {
+        upperCase++;
+      }
+      if (
+        (enteredPassword.charCodeAt(i) >= 97) &
+        (enteredPassword.charCodeAt(i) <= 122)
+      ) {
+        lowerCase++;
+      }
+      if (
+        (enteredPassword.charCodeAt(i) >= 48) &
+        (enteredPassword.charCodeAt(i) <= 57)
+      ) {
+        number++;
+      }
+    }
+    if (upperCase === 0 || lowerCase === 0 || number === 0) {
+      document.querySelector('.task6-alert-user-password').innerHTML =
+        'Password should contain atleast one capital letter,one small letter and one number';
+      document
+        .querySelector('.task6-alert-user-password')
+        .classList.remove('hidden');
+    } else if ((upperCase > 0) & (lowerCase > 0) & (number > 0)) {
+      document
+        .querySelector('.task6-alert-user-password')
+        .classList.add('hidden');
+    }
+  }
+  finalCheck();
+}
+
+//Email validation
+let task6enteredEmail = document.querySelector('#Email');
+function emailChange() {
+  let enteredEmail = task6enteredEmail.value;
+  if (enteredEmail === '') {
+    document.querySelector('.task6-alert-user-email').innerHTML =
+      'This field cannot be left empty';
+    document
+      .querySelector('.task6-alert-user-email')
+      .classList.remove('hidden');
+  } else {
+    let arr = [];
+    for (let i = 0; i < enteredEmail.length; i++) {
+      arr.push(enteredEmail.charCodeAt(i));
+    }
+    if (!arr.includes(64)) {
+      document.querySelector('.task6-alert-user-email').innerHTML =
+        'E-mail should be in the form example@abc.com';
+      document
+        .querySelector('.task6-alert-user-email')
+        .classList.remove('hidden');
+    } else
+      document.querySelector('.task6-alert-user-email').classList.add('hidden');
+  }
+  finalCheck();
+}
+
+//Phone-Number validation
+let task6enteredPhoneNumber = document.querySelector('#Number');
+function numberChange() {
+  let enteredPhoneNumber = task6enteredPhoneNumber.value;
+  if (enteredPhoneNumber === '') {
+    document.querySelector('.task6-alert-user-number').innerHTML =
+      'This field cannot be left empty';
+    document
+      .querySelector('.task6-alert-user-number')
+      .classList.remove('hidden');
+  } else if (enteredPhoneNumber.length !== 10) {
+    document.querySelector('.task6-alert-user-number').innerHTML =
+      'Phone number must contain only 10 digits';
+    document
+      .querySelector('.task6-alert-user-number')
+      .classList.remove('hidden');
+  } else {
+    for (let i = 0; i < enteredPhoneNumber.length; i++) {
+      if (
+        (enteredPhoneNumber.charCodeAt(i) >= 48) &
+        (enteredPhoneNumber.charCodeAt(i) <= 57)
+      )
+        continue;
+      else
+        document
+          .querySelector('.task6-alert-user-number')
+          .classList.remove('hidden');
+      break;
+    }
+    document.querySelector('.task6-alert-user-number').classList.add('hidden');
+  }
+  finalCheck();
+}
+
+//Address validation
+let task6EnteredAddress = document.querySelector('#address');
+function addressChange() {
+  let enteredAddress = task6EnteredAddress.value;
+  if (enteredAddress.length === 0) {
+    document.querySelector('.task6-alert-user-address').innerHTML =
+      'This field cannot be left empty';
+    document
+      .querySelector('.task6-alert-user-address')
+      .classList.remove('hidden');
+  } else if (enteredAddress.length >= 20) {
+    document.querySelector('.task6-alert-user-address').innerHTML =
+      'Address should not exceed 20 characters';
+    document
+      .querySelector('.task6-alert-user-address')
+      .classList.remove('hidden');
+  } else {
+    document.querySelector('.task6-alert-user-address').classList.add('hidden');
+  }
+  finalCheck();
+}
+
+function finalCheck() {
+  let check1 = 0;
+  for (let i = 0; i < 5; i++) {
+    if (document.forms['myForm'][`inputField${i}`].value === '') {
+      check1++;
+    } else continue;
+  }
+  const init = document.querySelectorAll('.error-msg');
+  let check = 0;
+
+  for (let i = 0; i < init.length; i++) {
+    if (init[i].classList.contains('hidden')) {
+      check++;
+    } else continue;
+  }
+
+  if ((check === init.length) & (check1 === 0)) {
+    document.querySelector('.task6-submit-button').disabled = false;
+  }
+}
+
+function makeJSON() {
+  let arr = [];
+  for (let i = 0; i < 5; i++) {
+    arr.push(document.forms['myForm'][`inputField${i}`].value);
+  }
+  const user = {};
+  user.name = arr[0];
+  user.password = arr[1];
+  user.email = arr[2];
+  user.number = arr[3];
+  user.address = arr[4];
+
+  console.log(user);
+  console.log(JSON.stringify(user));
+
+  for (let i = 0; i < 5; i++) {
+    document.forms['myForm'][`inputField${i}`].value = '';
+  }
+  document.querySelector('.task6-submit-button').disabled = true;
+}

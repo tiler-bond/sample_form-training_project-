@@ -231,5 +231,80 @@
         <div class="task-list"></div>
       </div>
     </div>
+
+    <!-- TASK-6 -->
+
+    <div class="task-6">
+      <form class="task6-registration-form" name="myForm">
+        <label class="task6-form-fields" for="userName">Name</label>
+        <input
+          class="task6-form-input-fields"
+          type="text"
+          name="inputField0"
+          id="userName"
+          autocomplete="off"
+          onchange="userNameChange()"
+        />
+        <span class="task6-alert-user-name hidden error-msg"></span>
+        <br />
+        <label class="task6-form-fields" for="password">Password</label>
+        <input
+          class="task6-form-input-fields"
+          type="password"
+          id="password"
+          name="inputField1"
+          onchange="passwordChange()"
+        />
+        <span class="task6-alert-user-password hidden error-msg"> </span>
+        <br />
+        <label class="task6-form-fields" for="Email">Email</label>
+        <input
+          class="task6-form-input-fields"
+          type="email"
+          id="Email"
+          autocomplete="off"
+          name="inputField2"
+          onchange="emailChange()"
+        />
+        <span class="task6-alert-user-email hidden error-msg"> </span>
+
+        <br />
+        <label class="task6-form-fields" for="Number">Number</label>
+        <input
+          class="task6-form-input-fields"
+          type="tel"
+          id="Number"
+          autocomplete="off"
+          name="inputField3"
+          onchange="numberChange()"
+        />
+        <span class="task6-alert-user-number hidden error-msg"> </span>
+
+        <br />
+        <label class="task6-form-fields" id="task6-address-field" for="address"
+          >Address</label
+        >
+        <textarea
+          id="address"
+          class="task6-form-input-fields"
+          maxlength="140"
+          rows="5"
+          name="inputField4"
+          onchange="addressChange()"
+        ></textarea>
+        <span class="task6-alert-user-address hidden error-msg"></span>
+        <br />
+        <div class="form-div">
+          <button
+            type="button"
+            class="task6-submit-button"
+            onclick="makeJSON()"
+            disabled
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
