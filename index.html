@@ -243,7 +243,7 @@
           name="inputField0"
           id="userName"
           autocomplete="off"
-          onchange="userNameChange()"
+          onchange="validate()"
         />
         <span class="task6-alert-user-name hidden error-msg"></span>
         <br />
@@ -253,7 +253,7 @@
           type="password"
           id="password"
           name="inputField1"
-          onchange="passwordChange()"
+          onchange="validate()"
         />
         <span class="task6-alert-user-password hidden error-msg"> </span>
         <br />
@@ -264,19 +264,19 @@
           id="Email"
           autocomplete="off"
           name="inputField2"
-          onchange="emailChange()"
+          onchange="validate()"
         />
         <span class="task6-alert-user-email hidden error-msg"> </span>
 
         <br />
-        <label class="task6-form-fields" for="Number">Number</label>
+        <label class="task6-form-fields" for="number">Number</label>
         <input
           class="task6-form-input-fields"
           type="tel"
-          id="Number"
+          id="number"
           autocomplete="off"
           name="inputField3"
-          onchange="numberChange()"
+          onchange="validate()"
         />
         <span class="task6-alert-user-number hidden error-msg"> </span>
 
@@ -290,7 +290,7 @@
           maxlength="140"
           rows="5"
           name="inputField4"
-          onchange="addressChange()"
+          onchange="validate()"
         ></textarea>
         <span class="task6-alert-user-address hidden error-msg"></span>
         <br />

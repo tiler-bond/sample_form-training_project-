@@ -251,38 +251,44 @@ inputTask.addEventListener('submit', function (e) {
 //       document.querySelectorAll('.edit-div').classList.add('hidden');
 //     } else return;
 // });
-///////////////
-///////////////
+
+/////
+/////
 ///////////////
 //   TASK-6
 //////////////
 //////////////
 //////////////
 
-//UserName validation
-const task6InputName = document.querySelector('#userName');
-function userNameChange() {
-  if (task6InputName.value === '') {
+const task6UserName = document.querySelector('#userName');
+const task6Password = document.querySelector('#password');
+const task6Email = document.querySelector('#Email');
+const task6Number = document.querySelector('#number');
+const task6Address = document.querySelector('#address');
+
+function validate() {
+  let counter = 0;
+  let enteredName = task6UserName.value;
+  let enteredPassword = task6Password.value;
+  let enteredEmail = task6Email.value;
+  let enteredNumber = task6Number.value;
+  let enteredAddress = task6Address.value;
+
+  if (enteredName === '') {
     document.querySelector('.task6-alert-user-name').innerHTML =
       'This field cannot be left empty';
     document.querySelector('.task6-alert-user-name').classList.remove('hidden');
-  } else if (task6InputName.value !== '') {
+  } else if (enteredName !== '') {
     document.querySelector('.task6-alert-user-name').classList.add('hidden');
+    counter++;
   }
-  finalCheck();
-}
-
-//Password validation
-let task6InputPassword = document.querySelector('#password');
-function passwordChange() {
-  let enteredPassword = task6InputPassword.value;
   if (enteredPassword === '') {
     document.querySelector('.task6-alert-user-password').innerHTML =
       'This field cannot be left empty';
     document
       .querySelector('.task6-alert-user-password')
       .classList.remove('hidden');
-  } else {
+  } else if (enteredPassword !== '') {
     document
       .querySelector('.task6-alert-user-password')
       .classList.add('hidden');
@@ -319,22 +325,16 @@ function passwordChange() {
       document
         .querySelector('.task6-alert-user-password')
         .classList.add('hidden');
+      counter++;
     }
   }
-  finalCheck();
-}
-
-//Email validation
-let task6enteredEmail = document.querySelector('#Email');
-function emailChange() {
-  let enteredEmail = task6enteredEmail.value;
   if (enteredEmail === '') {
     document.querySelector('.task6-alert-user-email').innerHTML =
       'This field cannot be left empty';
     document
       .querySelector('.task6-alert-user-email')
       .classList.remove('hidden');
-  } else {
+  } else if (enteredEmail !== '') {
     let arr = [];
     for (let i = 0; i < enteredEmail.length; i++) {
       arr.push(enteredEmail.charCodeAt(i));
@@ -345,50 +345,43 @@ function emailChange() {
       document
         .querySelector('.task6-alert-user-email')
         .classList.remove('hidden');
-    } else
+    } else {
       document.querySelector('.task6-alert-user-email').classList.add('hidden');
+      counter++;
+    }
   }
-  finalCheck();
-}
-
-//Phone-Number validation
-let task6enteredPhoneNumber = document.querySelector('#Number');
-function numberChange() {
-  let enteredPhoneNumber = task6enteredPhoneNumber.value;
-  if (enteredPhoneNumber === '') {
+  if (enteredNumber === '') {
     document.querySelector('.task6-alert-user-number').innerHTML =
       'This field cannot be left empty';
     document
       .querySelector('.task6-alert-user-number')
       .classList.remove('hidden');
-  } else if (enteredPhoneNumber.length !== 10) {
+  } else if (enteredNumber.length !== 10) {
     document.querySelector('.task6-alert-user-number').innerHTML =
       'Phone number must contain only 10 digits';
     document
       .querySelector('.task6-alert-user-number')
       .classList.remove('hidden');
-  } else {
-    for (let i = 0; i < enteredPhoneNumber.length; i++) {
+  } else if (enteredNumber.length === 10) {
+    for (let i = 0; i < enteredNumber.length; i++) {
       if (
-        (enteredPhoneNumber.charCodeAt(i) >= 48) &
-        (enteredPhoneNumber.charCodeAt(i) <= 57)
-      )
-        continue;
-      else
+        (enteredNumber.charCodeAt(i) >= 48) &
+        (enteredNumber.charCodeAt(i) <= 57)
+      ) {
         document
           .querySelector('.task6-alert-user-number')
-          .classList.remove('hidden');
+          .classList.add('hidden');
+        counter++;
+        continue;
+      } else
+        document.querySelector('.task6-alert-user-number').innerHTML =
+          'Phone number must contain only 10 digits';
+      document
+        .querySelector('.task6-alert-user-number')
+        .classList.remove('hidden');
       break;
     }
-    document.querySelector('.task6-alert-user-number').classList.add('hidden');
   }
-  finalCheck();
-}
-
-//Address validation
-let task6EnteredAddress = document.querySelector('#address');
-function addressChange() {
-  let enteredAddress = task6EnteredAddress.value;
   if (enteredAddress.length === 0) {
     document.querySelector('.task6-alert-user-address').innerHTML =
       'This field cannot be left empty';
@@ -401,48 +394,46 @@ function addressChange() {
     document
       .querySelector('.task6-alert-user-address')
       .classList.remove('hidden');
-  } else {
+  } else if (enteredAddress.length <= 20) {
     document.querySelector('.task6-alert-user-address').classList.add('hidden');
+    counter++;
   }
-  finalCheck();
-}
-
-function finalCheck() {
-  let check1 = 0;
-  for (let i = 0; i < 5; i++) {
-    if (document.forms['myForm'][`inputField${i}`].value === '') {
-      check1++;
-    } else continue;
-  }
-  const init = document.querySelectorAll('.error-msg');
-  let check = 0;
-
-  for (let i = 0; i < init.length; i++) {
-    if (init[i].classList.contains('hidden')) {
-      check++;
-    } else continue;
-  }
-
-  if ((check === init.length) & (check1 === 0)) {
+  // console.log(counter);
+  // console.log(document.querySelectorAll('.task6-form-input-fields').length);
+  if (
+    counter ===
+    document.querySelectorAll('.task6-form-input-fields').length + 9
+  ) {
     document.querySelector('.task6-submit-button').disabled = false;
   }
 }
 
+let usrCtr = 0;
+const users = {};
 function makeJSON() {
-  let arr = [];
-  for (let i = 0; i < 5; i++) {
-    arr.push(document.forms['myForm'][`inputField${i}`].value);
-  }
-  const user = {};
-  user.name = arr[0];
-  user.password = arr[1];
-  user.email = arr[2];
-  user.number = arr[3];
-  user.address = arr[4];
+  usrCtr++;
 
-  console.log(user);
-  console.log(JSON.stringify(user));
+  users[`user${usrCtr}`] = {};
+  let Name = (users[`user${usrCtr}`].name = task6UserName.value);
+  let Password = (users[`user${usrCtr}`].password = task6Password.value);
+  let Email = (users[`user${usrCtr}`].email = task6Email.value);
+  let PNumber = (users[`user${usrCtr}`].number = task6Number.value);
+  let Address = (users[`user${usrCtr}`].address = task6Address.value);
 
+  console.log(users);
+  console.log(Object.keys(users));
+  console.log(Object.keys(users).length);
+  let html = '';
+  html = `<h3>USER ${usrCtr}</h3>
+              <ul>
+              <li>Name: ${Name}</li>
+              <li>Password: ${Password}</li>
+              <li>Email: ${Email}</li>
+              <li>Ph. Number: ${PNumber}</li>
+              <li>Address: ${Address}</li>
+              </ul>`;
+
+  document.body.insertAdjacentHTML('beforeend', html);
   for (let i = 0; i < 5; i++) {
     document.forms['myForm'][`inputField${i}`].value = '';
   }
