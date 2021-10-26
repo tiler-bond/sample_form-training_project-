@@ -426,7 +426,7 @@ function makeJSON() {
   let html = '';
   html = `<h3>USER ${usrCtr}</h3>
               <ul>
-              <li>Name: ${Name}</li>
+              <li>Name: ${Name}  </li>
               <li>Password: ${Password}</li>
               <li>Email: ${Email}</li>
               <li>Ph. Number: ${PNumber}</li>
