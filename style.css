@@ -481,5 +481,7 @@ span {
 }
 .userDiv {
   background-color: white;
-  height: 200px;
+  height: auto;
+  width: 30%;
+  margin: 0 auto;
 }

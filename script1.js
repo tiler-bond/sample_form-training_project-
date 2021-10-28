@@ -123,27 +123,23 @@ function makeJSON() {
   console.log(usr);
   console.log(users);
 
-  const userLi = document.createElement('li');
-  console.log(userLi);
+  const nameLi = document.createElement('li');
+  nameLi.innerHTML = usr.name;
+  const passwordLi = document.createElement('li');
+  passwordLi.innerHTML = usr.password;
+  const emailLi = document.createElement('li');
+  emailLi.innerHTML = usr.email;
+  const numberLi = document.createElement('li');
+  numberLi.innerHTML = usr.number;
+  const addressLi = document.createElement('li');
+  addressLi.innerHTML = usr.address;
 
-  document.querySelector('.userUl').appendChild(userLi);
+  document.querySelector('.userUl').appendChild(nameLi);
+  document.querySelector('.userUl').appendChild(passwordLi);
+  document.querySelector('.userUl').appendChild(emailLi);
+  document.querySelector('.userUl').appendChild(numberLi);
+  document.querySelector('.userUl').appendChild(addressLi);
 
-  //   console.log(users[usrCtr - 1]);
-  //   localStorage.setItem(`User${usrCtr}`, JSON.stringify(users[usrCtr - 1]));
-  //   console.log(JSON.parse(localStorage.getItem('User1')));
-  //   console.log(localStorage.getItem('User1'));
-
-  //   let html = '';
-  //   html = `<h3>USER ${usrCtr}</h3>
-  //               <ul>
-  //               <li>Name: ${Name}  </li>
-  //               <li>Password: ${Password}</li>
-  //               <li>Email: ${Email}</li>
-  //               <li>Ph. Number: ${PNumber}</li>
-  //               <li>Address: ${Address}</li>
-  //               </ul>`;
-
-  //   document.body.insertAdjacentHTML('beforeend', html);
   for (let i = 0; i < 5; i++) {
     document.forms['myForm'][`inputField${i}`].value = '';
   }
