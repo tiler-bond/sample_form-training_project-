@@ -479,3 +479,7 @@ span {
   color: red;
   width: 300px;
 }
+.userDiv {
+  background-color: white;
+  height: 200px;
+}
