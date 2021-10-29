@@ -100,9 +100,9 @@ function makeJSON() {
   usr.address = task6Address.value;
   users.push(usr);
   console.log(usr);
-  console.log(users);
+  localStorage.setItem(`user${usrCtr}`, JSON.stringify(usr));
+  console.log(localStorage.getItem(`user${usrCtr}`));
 
-  page1.classList.add('hidden');
   page2(usr);
 
   //   const nameLi = document.createElement('li');
@@ -129,12 +129,26 @@ function makeJSON() {
 }
 
 function page2(usr) {
+  page1.classList.add('hidden');
   const noticeUser = document.createElement('h1');
+  const backButton = document.createElement('button');
+  backButton.innerHTML = 'Back';
+  backButton.style.visibility = 'initial';
+  backButton.style.position = 'absolute';
+  backButton.style.top = '250px';
+  backButton.style.left = '340px';
+
+  backButton.addEventListener('click', function () {
+    page1.classList.remove('hidden');
+    noticeUser.style.visibility = 'hidden';
+    backButton.style.visibility = 'hidden';
+  });
+  page1.appendChild(backButton);
+
   noticeUser.innerHTML = `YOUR FORM IS SUCCESSFULLY SUBMITTED ${usr.name.toUpperCase()}`;
   noticeUser.style.visibility = 'initial';
   noticeUser.style.color = 'black';
   noticeUser.style.position = 'absolute';
-  noticeUser.style.top = '0px';
-  console.log(noticeUser);
+  noticeUser.style.top = '20px';
   page1.appendChild(noticeUser);
 }
