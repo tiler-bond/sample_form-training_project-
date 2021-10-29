@@ -411,6 +411,7 @@ span {
   margin: 0 auto;
   width: 50%;
   padding: 50px;
+  position: relative;
 }
 
 .task6-registration-form {

@@ -6,6 +6,7 @@ const task6Email = document.querySelector('#Email');
 const task6Number = document.querySelector('#number');
 const task6Address = document.querySelector('#address');
 const allErrors = document.querySelectorAll('.error-msg');
+const page1 = document.querySelector('.task-6');
 
 function resetErrors() {
   for (let i = 0; i < allErrors.length; i++) {
@@ -45,28 +46,6 @@ function validate() {
     }
   }
 
-  let emailCtr = 0;
-  let arr = [];
-  for (let i = 0; i < enteredEmail.length; i++) {
-    arr.push(enteredEmail.charCodeAt(i));
-  }
-  if (!arr.includes(64)) {
-    emailCtr++;
-  }
-
-  let numberCtr = 0;
-  for (let i = 0; i < enteredNumber.length; i++) {
-    if (
-      (enteredNumber.charCodeAt(i) >= 48) &
-      (enteredNumber.charCodeAt(i) <= 57)
-    ) {
-      continue;
-    } else {
-      numberCtr++;
-      break;
-    }
-  }
-
   if (enteredName === '') {
     document.querySelector('.task6-alert-user-name').innerHTML =
       'This field cannot be left empty';
@@ -85,7 +64,7 @@ function validate() {
   } else if (enteredEmail === '') {
     document.querySelector('.task6-alert-user-email').innerHTML =
       'This field cannot be left empty';
-  } else if (emailCtr !== 0) {
+  } else if (!enteredEmail.includes('@')) {
     document.querySelector('.task6-alert-user-email').innerHTML =
       'E-mail should be in the form example@abc.com';
   } else if (enteredNumber === '') {
@@ -94,7 +73,7 @@ function validate() {
   } else if (enteredNumber.length !== 10) {
     document.querySelector('.task6-alert-user-number').innerHTML =
       'Phone number must contain only 10 digits';
-  } else if (numberCtr !== 0) {
+  } else if (isNaN(enteredNumber)) {
     document.querySelector('.task6-alert-user-number').innerHTML =
       'Phone number must contain only 10 digits';
   } else if (enteredAddress.length === 0) {
@@ -123,25 +102,39 @@ function makeJSON() {
   console.log(usr);
   console.log(users);
 
-  const nameLi = document.createElement('li');
-  nameLi.innerHTML = usr.name;
-  const passwordLi = document.createElement('li');
-  passwordLi.innerHTML = usr.password;
-  const emailLi = document.createElement('li');
-  emailLi.innerHTML = usr.email;
-  const numberLi = document.createElement('li');
-  numberLi.innerHTML = usr.number;
-  const addressLi = document.createElement('li');
-  addressLi.innerHTML = usr.address;
+  page1.classList.add('hidden');
+  page2(usr);
 
-  document.querySelector('.userUl').appendChild(nameLi);
-  document.querySelector('.userUl').appendChild(passwordLi);
-  document.querySelector('.userUl').appendChild(emailLi);
-  document.querySelector('.userUl').appendChild(numberLi);
-  document.querySelector('.userUl').appendChild(addressLi);
+  //   const nameLi = document.createElement('li');
+  //   nameLi.innerHTML = usr.name;
+  //   const passwordLi = document.createElement('li');
+  //   passwordLi.innerHTML = usr.password;
+  //   const emailLi = document.createElement('li');
+  //   emailLi.innerHTML = usr.email;
+  //   const numberLi = document.createElement('li');
+  //   numberLi.innerHTML = usr.number;
+  //   const addressLi = document.createElement('li');
+  //   addressLi.innerHTML = usr.address;
+
+  //   document.querySelector('.userUl').appendChild(nameLi);
+  //   document.querySelector('.userUl').appendChild(passwordLi);
+  //   document.querySelector('.userUl').appendChild(emailLi);
+  //   document.querySelector('.userUl').appendChild(numberLi);
+  //   document.querySelector('.userUl').appendChild(addressLi);
 
   for (let i = 0; i < 5; i++) {
     document.forms['myForm'][`inputField${i}`].value = '';
   }
   document.querySelector('.task6-submit-button').disabled = true;
+}
+
+function page2(usr) {
+  const noticeUser = document.createElement('h1');
+  noticeUser.innerHTML = `YOUR FORM IS SUCCESSFULLY SUBMITTED ${usr.name.toUpperCase()}`;
+  noticeUser.style.visibility = 'initial';
+  noticeUser.style.color = 'black';
+  noticeUser.style.position = 'absolute';
+  noticeUser.style.top = '0px';
+  console.log(noticeUser);
+  page1.appendChild(noticeUser);
 }
