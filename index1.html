@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/6bd5d186a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script async src="script2.js"></script>
+  </head>
+  <body>
+    <!-- TASK 1 -->
+
+    <div class="task1-sample-form">
+      <header class="header">
+        <i class="fas fa-4x logo fa-globe-europe"></i>
+        <h2>GatesNotes</h2>
+      </header>
+      <h1>Sign Up & Subscribe Form</h1>
+      <main>
+        <div class="signUpDiv">
+          <h2>SIGN UP WITH</h2>
+          <div class="socialMediaLinks">
+            <i class="fab fa-2x facebook fa-facebook-square"></i>
+            <i class="fab fa-2x twitter fa-twitter"></i>
+            <i class="fab fa-2x linkedin fa-linkedin"></i>
+          </div>
+          <p>(or)</p>
+          <p class="registeredUser">Have an Account?</p>
+          <div class="inputFields">
+            <input type="email" class="email" placeholder="E-Mail" />
+            <i class="far mail-icon fa-envelope"></i>
+            <input type="password" class="password" placeholder="Password" />
+            <i class="fas password-icon fa-lock-open"></i>
+          </div>
+          <button type="button" class="button">Get Started</button>
+        </div>
+        <div class="subscriptionDiv">
+          <i class="fas fa-3x fa-paper-plane"></i>
+          <h2>SUBSCRIBE</h2>
+          <p>Subscribe To Get Our Latest Update!</p>
+          <p id="lastLine">Drop A Mail To Join Our Newsletter For Free News</p>
+          <div class="inputFields">
+            <input type="email" id="email" placeholder="Enter Your Email" />
+            <i class="far mail-icon-subscription fa-envelope"></i>
+          </div>
+          <input type="button" class="button" value="SUBSCRIBE" />
+        </div>
+      </main>
+      <footer class="footer">
+        <p>
+          © 2017 Sign Up & Subscribe Form. All rights reserved | Design by
+          W3layouts
+        </p>
+      </footer>
+    </div>
+
+    <!--  TASK 2 -->
+
+    <div class="task2-operators-DOM">
+      <div class="calculator">
+        <div class="resultArea">
+          <div class="finalResult">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur</p> -->
+          </div>
+          <div class="initialValue">
+            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+          </div>
+        </div>
+        <div class="numPad">
+          <div class="grid-item">
+            <button class="number" id="7" onclick="alertt(7)">7</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="8" onclick="alertt(8)">8</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="9" onclick="alertt(9)">9</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="*" onclick="alertt('*')">*</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="4" onclick="alertt(4)">4</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="5" onclick="alertt(5)">5</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="6" onclick="alertt(6)">6</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="/" onclick="alertt('/')">/</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="1" onclick="alertt(1)">1</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="2" onclick="alertt(2)">2</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="3" onclick="alertt(3)">3</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="-" onclick="alertt('-')">-</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="AC" onclick="alertt('AC')">AC</button>
+          </div>
+          <div class="grid-item">
+            <button class="number" id="0" onclick="alertt(0)">0</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="=" onclick="alertt('=')">=</button>
+          </div>
+          <div class="grid-item">
+            <button class="operator" id="+" onclick="alertt('+')">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK 3 -->
+
+    <div class="inputDiv">
+      <form action="" class="evenNumbers">
+        <label for="evenNum"> Type a number</label>
+        <input type="number" id="evenNum" placeholder="Less than 500" />
+      </form>
+    </div>
+    <div class="descriptionDiv"></div>
+    <div class="container"></div>
+
+    <!-- TASK 4 -->
+    <div class="task-4">
+      <h1>This is a project for illustrating different array methods</h1>
+      <h2>
+        array.push()--
+        <span
+          >The push() method adds a new element to an array (at the end)</span
+        >
+      </h2>
+      <input type="text" id="push" placeholder="any text" />
+      <h2>
+        array.pop()--
+        <span>The pop() method removes the last element from an array</span>
+      </h2>
+      <input type="button" id="pop" value="press to see the change" />
+      <h2>
+        array.toString()--
+        <span
+          >The JavaScript method toString() converts an array to a string of
+          (comma separated) array values.
+        </span>
+      </h2>
+      <input type="button" id="toString" value="press to see the change" />
+      <h2>
+        array.join()--
+        <span
+          >The join() method also joins all array elements into a string but
+          with a specified separator</span
+        >
+      </h2>
+      <input type="button" id="join" value="press to see the change" />
+      <h2>
+        array.shift()--
+        <span>The shift() method removes the first array element</span>
+      </h2>
+      <input type="button" id="shift" value="press to see the change" />
+      <h2>
+        array.unshift()--
+        <span
+          >The unshift() method adds a new element to an array (at the
+          beginning)</span
+        >
+      </h2>
+      <input type="text" id="unshift" placeholder="any text" />
+      <h2>
+        array.concat()--
+        <span
+          >The concat() method creates a new array by merging (concatenating)
+          existing arrays</span
+        >
+      </h2>
+      <input
+        type="text"
+        id="concat"
+        placeholder="enter values seperated by commas"
+      />
+      <h2>
+        array.slice()--
+        <span
+          >The slice() method slices out a piece of an array into a new
+          array.</span
+        >
+      </h2>
+      <input
+        type="text"
+        id="slice"
+        placeholder="enter starting and end index separated by comma"
+      />
+      <h2>
+        array.splice()--
+        <span
+          >The splice() method can be used to add new items to an array or
+          remove elements without leaving "holes" in the array`</span
+        >
+      </h2>
+      <input
+        type="text"
+        id="splice"
+        placeholder="starting index,number of elements to be removed,new values to be added"
+      />
+    </div>
+
+    <!-- TASK 5 -->
+
+    <div class="task5">
+      <div class="task5-container">
+        <h1>ToDo LIST</h1>
+        <div class="task5-input">
+          <form action="" class="inputForm">
+            <input type="text" id="todo-input" autocomplete="off" />
+            <button id="addEvent">ADD TASK <i class="fas fa-plus"></i></button>
+          </form>
+        </div>
+        <div class="task-list"></div>
+      </div>
+    </div>
+
+    <!-- TASK-6 -->
+
+    <div class="task-6">
+      <form class="task6-registration-form" name="myForm">
+        <label class="task6-form-fields" for="userName">Name</label>
+        <input
+          class="task6-form-input-fields"
+          type="text"
+          name="inputField0"
+          id="userName"
+          autocomplete="off"
+          onchange="validate()"
+        />
+        <span class="task6-alert-user-name error-msg"></span>
+        <br />
+        <label class="task6-form-fields" for="password">Password</label>
+        <input
+          class="task6-form-input-fields"
+          type="password"
+          id="password"
+          name="inputField1"
+          onchange="validate()"
+        />
+        <span class="task6-alert-user-password error-msg"> </span>
+        <br />
+        <label class="task6-form-fields" for="Email">Email</label>
+        <input
+          class="task6-form-input-fields"
+          type="email"
+          id="Email"
+          autocomplete="off"
+          name="inputField2"
+          onchange="validate()"
+        />
+        <span class="task6-alert-user-email error-msg"> </span>
+
+        <br />
+        <label class="task6-form-fields" for="number">Number</label>
+        <input
+          class="task6-form-input-fields"
+          type="tel"
+          id="number"
+          autocomplete="off"
+          name="inputField3"
+          onchange="validate()"
+        />
+        <span class="task6-alert-user-number error-msg"> </span>
+
+        <br />
+        <label class="task6-form-fields" id="task6-address-field" for="address"
+          >Address</label
+        >
+        <textarea
+          id="address"
+          class="task6-form-input-fields"
+          maxlength="140"
+          rows="5"
+          name="inputField4"
+          onchange="validate()"
+        ></textarea>
+        <span class="task6-alert-user-address error-msg"></span>
+        <br />
+        <div class="form-div">
+          <button
+            type="button"
+            class="task6-submit-button"
+            onclick="makeJSON()"
+            disabled
+          >
+            Submit
+          </button>
+          <div class="userDiv">
+            <ul class="userUl"></ul>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="task7">
+      <div class="menu">
+        <div id="item-1" class="items"></div>
+        <div class="item-description">
+          <p>kadhai paneer</p>
+        </div>
+        <div id="item-2" class="items"></div>
+        <div class="item-description"></div>
+        <div id="item-3" class="items"></div>
+        <div class="item-description"></div>
+      </div>
+      <div class="bill"></div>
+      <div class="total"></div>
+    </div>
+  </body>
+</html>

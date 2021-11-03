@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+}
+
+.left-div {
+  width: 20%;
+
+  min-height: fit-content;
+  box-shadow: 0px 0px 10px #ccc;
+  text-align: center;
+  display: inline-block;
+}
+
+.left-div h1 {
+  color: white;
+  background-color: black;
+  padding: 15px 0px;
+}
+
+.menu-items {
+  width: 90%;
+  margin: 0 auto;
+}
+
+img {
+  height: 170px;
+  width: 100%;
+}
+
+.item-description {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.item-description p {
+  width: 80%;
+  color: rgb(0, 0, 0);
+  text-align: left;
+}
+
+span {
+  color: rgba(0, 0, 0, 0.74);
+  font-size: 0.8rem;
+}
+
+.item-description button {
+  width: 20%;
+  background-color: rgb(42, 194, 42);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.item-description button:hover {
+  background-color: rgb(32, 179, 32);
+  color: rgb(38, 36, 179);
+}
+
+.right-div {
+  width: 79%;
+  display: inline-block;
+  min-height: fit-content;
+  vertical-align: top;
+  position: relative;
+}
+
+.bill {
+  width: 60%;
+  margin: 0 auto;
+
+  box-shadow: 0px 0px 10px #ccc;
+  margin-top: 250px;
+
+  text-align: center;
+}
+
+.bill h2 {
+  color: white;
+  background-color: black;
+  padding: 15px 0px;
+}
+
+.bill-list {
+  min-height: 200px;
+}
+
+.total {
+  position: absolute;
+  border: none;
+  right: 10px;
+  top: 30px;
+  background-color: rgb(221, 60, 60);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.total:hover {
+  color: rgb(28, 5, 233);
+}

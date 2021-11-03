@@ -500,6 +500,7 @@ span {
   background-color: rgb(212, 221, 236);
   height: 100%;
   display: inline-block;
+  vertical-align: top;
 }
 
 .bill {
@@ -507,17 +508,19 @@ span {
   background-color: rgb(116, 237, 100);
   height: 50%;
   display: inline-block;
-  margin-bottom: 15%;
+  /* margin-top: 15%; */
   margin-left: 10%;
+  vertical-align: middle;
 }
 
 .total {
   width: 15%;
   background-color: rgb(237, 100, 141);
   height: 50px;
-  margin-bottom: 30%;
+  /* margin-top: 20%; */
   margin-left: 2%;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .items {
