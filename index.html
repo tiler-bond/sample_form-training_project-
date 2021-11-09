@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/6bd5d186a1.js"
+      crossorigin="anonymous"
+    ></script>
     <script async src="script2.js"></script>
     <link rel="stylesheet" href="style2.css" />
   </head>
@@ -18,9 +22,29 @@
           </div>
           <div class="item-description">
             <p>KADAI PANEER <span> RS 400.00</span></p>
-            <button data-name="KADHAI PANEER" data-cost="400" id="add-item-1">
-              Add
-            </button>
+
+            <div class="add-button">
+              <div class="Counter hidden">
+                <span class="minus-button-span"
+                  ><button class="minus-button" onclick="minus(this)">
+                    <i class="fas plus-minus fa-minus"></i></button
+                ></span>
+                <span class="quantity">1</span>
+                <span class="plus-button-span"
+                  ><button class="plus-button" onclick="plus(this)">
+                    <i class="fas plus-minus fa-plus"></i></button
+                ></span>
+              </div>
+              <button
+                class="initial-button"
+                data-name="KADHAI PANEER"
+                data-cost="400"
+                id="add-item-1"
+                onclick="addFood('KADHAI PANEER','400',this)"
+              >
+                Add
+              </button>
+            </div>
           </div>
         </div>
         <div class="menu-items">
@@ -32,9 +56,28 @@
           </div>
           <div class="item-description">
             <p>DUM ALLOO <span> RS 300.00</span></p>
-            <button data-name="DUM ALLOO" data-cost="300" id="add-item-2">
-              Add
-            </button>
+            <div class="add-button">
+              <div class="Counter hidden">
+                <span class="minus-button-span"
+                  ><button class="minus-button" onclick="minus(this)">
+                    <i class="fas plus-minus fa-minus"></i></button
+                ></span>
+                <span class="quantity">1</span>
+                <span class="plus-button-span"
+                  ><button class="plus-button" onclick="plus(this)">
+                    <i class="fas plus-minus fa-plus"></i></button
+                ></span>
+              </div>
+              <button
+                class="initial-button"
+                data-name="DUM ALLOO"
+                data-cost="300"
+                id="add-item-2"
+                onclick="addFood('DUM ALLOO','300',this)"
+              >
+                Add
+              </button>
+            </div>
           </div>
         </div>
         <div class="menu-items">
@@ -43,9 +86,28 @@
           </div>
           <div class="item-description">
             <p>CHOLE <span> RS 200.00</span></p>
-            <button data-name="CHOLE BHATURE" data-cost="200" id="add-item-3">
-              Add
-            </button>
+            <div class="add-button">
+              <div class="Counter hidden">
+                <span class="minus-button-span"
+                  ><button class="minus-button" onclick="minus(this)">
+                    <i class="fas plus-minus fa-minus"></i></button
+                ></span>
+                <span class="quantity">1</span>
+                <span class="plus-button-span"
+                  ><button class="plus-button" onclick="plus(this)">
+                    <i class="fas plus-minus fa-plus"></i></button
+                ></span>
+              </div>
+              <button
+                class="initial-button"
+                data-name="CHOLE BHATURE"
+                data-cost="200"
+                id="add-item-3"
+                onclick="addFood('CHOLE BHATURE','200',this)"
+              >
+                Add
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -64,6 +126,15 @@
           </div>
         </div>
         <button class="total">TOTAL</button>
+        <!-- <div class="counter">
+          <div class="minus">
+            <i class="fas fa-minus"></i>
+          </div>
+          <div class="numberCtr"><p>1</p></div>
+          <div class="plus">
+            <i class="fas fa-plus"></i>
+          </div>
+        </div> -->
       </div>
     </div>
   </body>
