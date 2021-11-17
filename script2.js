@@ -28,24 +28,34 @@ function addFood(food, price, obj) {
   obj.classList.add('hidden');
   x.querySelector('.Counter').classList.remove('hidden');
   const li = document.createElement('li');
-  li.setAttribute('class', 'bill-List');
+  li.setAttribute('class', 'bill-list-li');
   li.style.listStyle = 'decimal';
   const itemName = document.createElement('span');
   const itemCost = document.createElement('span');
   const itemQuantity = document.createElement('span');
+  const itemNameParagraph = document.createElement('p');
+  const itemQuantityParagraph = document.createElement('p');
+  const itemPriceParagraph = document.createElement('p');
+
   itemCost.setAttribute('class', 'price');
   itemName.setAttribute('class', 'item-name');
   itemQuantity.setAttribute('class', 'item-quantity');
-  itemCost.innerHTML = price;
-  itemName.innerHTML = food;
-  itemQuantity.innerHTML = 1;
+
+  itemNameParagraph.innerHTML = food;
+  itemQuantityParagraph.innerHTML = 1;
+  itemCost.innerHTML = Number(itemQuantityParagraph.innerHTML) * price;
+  itemQuantity.appendChild(itemQuantityParagraph);
   li.appendChild(itemName);
+  itemName.appendChild(itemNameParagraph);
   li.appendChild(itemQuantity);
   li.appendChild(itemCost);
   showBill.appendChild(li);
 }
 
 function plus(obj) {
+  console.log(
+    obj.closest('.item-description').querySelector('.food-name').innerHTML
+  );
   const x = obj.closest('.Counter');
   const y = x.querySelector('.quantity');
   let a = Number(y.innerHTML);
