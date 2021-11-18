@@ -22,19 +22,29 @@
           </div>
           <div class="item-description">
             <p>
-              <span class="food-name">KADAI PANEER </span
+              <span class="food-name">KADHAI PANEER</span
               ><span> RS 400.00</span>
             </p>
 
             <div class="add-button">
               <div class="Counter hidden">
                 <span class="minus-button-span"
-                  ><button class="minus-button" onclick="minus(this)">
+                  ><button
+                    class="minus-button"
+                    data-name="KADHAI PANEER"
+                    data-cost="400"
+                    onclick="minus(this)"
+                  >
                     <i class="fas plus-minus fa-minus"></i></button
                 ></span>
                 <span class="quantity">1</span>
                 <span class="plus-button-span"
-                  ><button class="plus-button" onclick="plus(this)">
+                  ><button
+                    class="plus-button"
+                    data-name="KADHAI PANEER"
+                    data-cost="400"
+                    onclick="plus(this)"
+                  >
                     <i class="fas plus-minus fa-plus"></i></button
                 ></span>
               </div>
@@ -43,7 +53,7 @@
                 data-name="KADHAI PANEER"
                 data-cost="400"
                 id="add-item-1"
-                onclick="addFood('KADHAI PANEER','400',this)"
+                onclick="addFood(this)"
               >
                 Add
               </button>
@@ -58,16 +68,29 @@
             />
           </div>
           <div class="item-description">
-            <p class="food-name">DUM ALLOO <span> RS 300.00</span></p>
+            <p>
+              <span class="food-name">DUM ALLOO</span>
+              <span> RS 300.00</span>
+            </p>
             <div class="add-button">
               <div class="Counter hidden">
                 <span class="minus-button-span"
-                  ><button class="minus-button" onclick="minus(this)">
+                  ><button
+                    class="minus-button"
+                    data-name="DUM ALLOO"
+                    data-cost="300"
+                    onclick="minus(this)"
+                  >
                     <i class="fas plus-minus fa-minus"></i></button
                 ></span>
                 <span class="quantity">1</span>
                 <span class="plus-button-span"
-                  ><button class="plus-button" onclick="plus(this)">
+                  ><button
+                    class="plus-button"
+                    data-name="DUM ALLOO"
+                    data-cost="300"
+                    onclick="plus(this)"
+                  >
                     <i class="fas plus-minus fa-plus"></i></button
                 ></span>
               </div>
@@ -76,7 +99,7 @@
                 data-name="DUM ALLOO"
                 data-cost="300"
                 id="add-item-2"
-                onclick="addFood('DUM ALLOO','300',this)"
+                onclick="addFood(this)"
               >
                 Add
               </button>
@@ -88,16 +111,29 @@
             <img src="chole-bhature.webp" alt="chole-bhature image" />
           </div>
           <div class="item-description">
-            <p class="food-name">CHOLE <span> RS 200.00</span></p>
+            <p>
+              <span class="food-name">CHOLE BHATURE</span>
+              <span> RS 200.00</span>
+            </p>
             <div class="add-button">
               <div class="Counter hidden">
                 <span class="minus-button-span"
-                  ><button class="minus-button" onclick="minus(this)">
+                  ><button
+                    class="minus-button"
+                    data-name="CHOLE BHATURE"
+                    data-cost="200"
+                    onclick="minus(this)"
+                  >
                     <i class="fas plus-minus fa-minus"></i></button
                 ></span>
                 <span class="quantity">1</span>
                 <span class="plus-button-span"
-                  ><button class="plus-button" onclick="plus(this)">
+                  ><button
+                    class="plus-button"
+                    data-name="CHOLE BHATURE"
+                    data-cost="200"
+                    onclick="plus(this)"
+                  >
                     <i class="fas plus-minus fa-plus"></i></button
                 ></span>
               </div>
@@ -106,7 +142,7 @@
                 data-name="CHOLE BHATURE"
                 data-cost="200"
                 id="add-item-3"
-                onclick="addFood('CHOLE BHATURE','200',this)"
+                onclick="addFood(this)"
               >
                 Add
               </button>

@@ -23,27 +23,32 @@ total.addEventListener('click', function () {
   showBill.appendChild(displayTotal);
 });
 
-function addFood(food, price, obj) {
+function addFood(obj) {
   const x = obj.closest('.add-button');
   obj.classList.add('hidden');
   x.querySelector('.Counter').classList.remove('hidden');
   const li = document.createElement('li');
   li.setAttribute('class', 'bill-list-li');
+  li.setAttribute('id', `${obj.dataset.name}`);
+  console.log(li);
+
   li.style.listStyle = 'decimal';
   const itemName = document.createElement('span');
   const itemCost = document.createElement('span');
   const itemQuantity = document.createElement('span');
   const itemNameParagraph = document.createElement('p');
   const itemQuantityParagraph = document.createElement('p');
-  const itemPriceParagraph = document.createElement('p');
+  // const itemPriceParagraph = document.createElement('p');
 
   itemCost.setAttribute('class', 'price');
   itemName.setAttribute('class', 'item-name');
   itemQuantity.setAttribute('class', 'item-quantity');
+  itemQuantityParagraph.setAttribute('class', 'item-quantity-p');
 
-  itemNameParagraph.innerHTML = food;
+  itemNameParagraph.innerHTML = obj.dataset.name;
   itemQuantityParagraph.innerHTML = 1;
-  itemCost.innerHTML = Number(itemQuantityParagraph.innerHTML) * price;
+  itemCost.innerHTML =
+    Number(itemQuantityParagraph.innerHTML) * obj.dataset.cost;
   itemQuantity.appendChild(itemQuantityParagraph);
   li.appendChild(itemName);
   itemName.appendChild(itemNameParagraph);
@@ -53,9 +58,14 @@ function addFood(food, price, obj) {
 }
 
 function plus(obj) {
-  console.log(
-    obj.closest('.item-description').querySelector('.food-name').innerHTML
-  );
+  const food = obj
+    .closest('.item-description')
+    .querySelector('.food-name').innerHTML;
+  const selectedLi = document.getElementById(`${food}`);
+  let quantity = Number(selectedLi.querySelector('.item-quantity-p').innerHTML);
+  quantity++;
+  selectedLi.querySelector('.price').innerHTML = quantity * obj.dataset.cost;
+  selectedLi.querySelector('.item-quantity-p').innerHTML = quantity;
   const x = obj.closest('.Counter');
   const y = x.querySelector('.quantity');
   let a = Number(y.innerHTML);
@@ -65,6 +75,15 @@ function plus(obj) {
 }
 
 function minus(obj) {
+  const food = obj
+    .closest('.item-description')
+    .querySelector('.food-name').innerHTML;
+  const selectedLi = document.getElementById(`${food}`);
+  console.log(selectedLi);
+  let quantity = Number(selectedLi.querySelector('.item-quantity-p').innerHTML);
+  quantity--;
+  selectedLi.querySelector('.price').innerHTML = quantity * obj.dataset.cost;
+  selectedLi.querySelector('.item-quantity-p').innerHTML = quantity;
   const x = obj.closest('.Counter');
   const y = x.querySelector('.quantity');
   let a = Number(y.innerHTML);
@@ -73,6 +92,7 @@ function minus(obj) {
   y.innerHTML = a;
   if (Number(y.innerHTML) === 0) {
     x.classList.add('hidden');
+    selectedLi.remove();
     const b = obj.closest('.add-button');
     b.querySelector('.initial-button').classList.remove('hidden');
     y.innerHTML = 1;
